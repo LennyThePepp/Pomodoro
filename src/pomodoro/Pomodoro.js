@@ -60,22 +60,22 @@ function Pomodoro() {
   const [breakDuration, setBreakDuration] = useState (5);
 
   const handleFocusIncrease = () =>
-    setFocusDuration(Math.min(60,focusDuration + 5));
+    setFocusDuration((focusDuration)=> Math.min(60,focusDuration + 5));
   
   const handleFocusDecrease = () =>
-    setFocusDuration(Math.max(5,focusDuration - 5));
+    setFocusDuration((focusDuration)=> Math.max(5,focusDuration - 5));
     
   const handleBreakIncrease = () =>
-    setBreakDuration(Math.min(15, breakDuration + 1));
+    setBreakDuration((breakDuration)=> Math.min(15, breakDuration + 1));
     
   const handleBreakDecrease = () => 
-    setBreakDuration(Math.max(1, breakDuration - 1));
+    setBreakDuration((breakDuration)=> Math.max(1, breakDuration - 1));
     
   const handleStop = () =>{
-    setFocusDuration(25);
-    setBreakDuration(5);
-    setIsTimerRunning(false);
-    setSession(null);
+     setFocusDuration(25);
+     setBreakDuration(5);
+     setSession(null);
+     setIsTimerRunning(false);
   } 
   
   /**
